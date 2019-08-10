@@ -1,0 +1,27 @@
+name: Transfer
+main: io.github.inapp123.Transfer
+version: 1.0
+author: inapp
+commands:
+  join:
+   description: 将您加入队列
+   usage: /<command> 队列名
+   permission: transfer.queue
+   permission-message: You don't have <permission>
+  leave:
+   description: 将您从队列中移除
+   usage: /<command>
+   permission: transfer.queue
+   permission-message: You don't have <permission>
+  transreload:
+   description: 重载Transfer
+   usage: /<command>
+   permission: transfer.reload
+   permission-message: 惊了,你是怎么知道这个指令的?你的权限不够啊....去问墨江要个op再来试试?
+permissions:
+   transfer.queue:
+    description: The permission of getting or leaving queue.
+    default: true
+   transfer.reload:
+    description: The permission of reloading transfer.
+    default: op

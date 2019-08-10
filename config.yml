@@ -1,0 +1,62 @@
+#Transfer 匹配插件配置文件
+#配置文件版本 1.0
+
+#需要匹配的集合名
+collection:
+    - example
+
+#集合名 标为需要匹配的集合才会被匹配.
+example:
+    #服务器部分:
+    server:
+        #port 为所需匹配子服的端口列表
+        port:
+            - 25570
+            - 25571
+            - 25572
+            - 25573
+        #servername 为所需匹配子服，在BC配置中的名字
+        servername:
+            - g1
+            - g2
+            - g3
+            - g4
+        #maxplayer为每个服务器的最大人数。超过这个数字也不会被匹配。
+        maxplayer:
+            - 16
+            - 16
+            - 16
+            - 16
+    #以上三项配置相同位置需要一一对应 如本例中25570 对应 g1 对应 16人 , 25571 对应 g2 对应 16人...
+    
+    #allowmotd为允许被匹配的motd。如本例中，当服务器的motd变为lobby时才可以被匹配
+    allowedmotd: lobby
+    #timeout 为ping的超时时间，单位毫秒。 ping超过这段时间会认为服务器掉线.
+    timeout: 100
+    #detecttime 是motd检测服务器的间隔时间,单位为tick.20tick为一秒.
+    detecttime: 100
+    #starttime 是motd检测服务器的开始时间,单位为tick.20tick为一秒.
+    starttime: 20
+
+#以下是集合的模板.供复制粘贴配置用.
+template:
+    server:
+        port:
+            - <在此添加端口号>
+        servername:
+            - <在此添加服务器名>
+        maxplayer:
+            - <在此添加最大玩家数>
+    allowedmotd: <在此添加允许的motd>
+    timeout: <在此添加超时时间>
+    detecttime: <在此添加间隔时间>
+    starttime: <在此添加开始时间>
+#提示文本部分
+#你需要使用minecraft原生的颜色符号来显示颜色.就是这个--->§<--- 按住alt键 在小键盘上输入"0167"可以插入这个符号.
+lang:
+    please_wait: "§8«§b§l 系统 §8»§r 已经将你加入匹配队列.请稍等.您可以输入 /leave 离开匹配队列"
+    must_player: "§8«§b§l 系统 §8»§r 你必须是玩家才可以执行这个指令"
+    in_queue: "§8«§c§l 系统 §8»§r 你已经在匹配队列里了"
+    leave_queue: "§8«§b§l 系统 §8»§r 你已离开匹配队列"
+    not_in_queue: "§8«§c§l 系统 §8»§r 你不在任何一个匹配队列内"
+    unknow_queue: "§8«§c§l 系统 §8»§r 队列不存在"
